@@ -14,22 +14,20 @@
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
         <md-list>
             <md-item ng-repeat="item in vm.menu">
-                <a>
-                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                        <div class="inset">
-                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                        </div>
-                        <div class="inset">{{item.title}}
-                        </div>
-                    </md-item-content>
-                </a>
+                <md-item-content layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="{{item.icon}}" style="fill: rgba(0,0,0,0.68)"></ng-md-icon>
+                    </div>
+                    <div class="inset">{{item.title}}
+                    </div>
+                </md-item-content>
             </md-item>
         </md-list>
     </md-sidenav>
     <div flex id="content">
         <md-content class="md-padding">
             <div layout="row" class="card-container" layout-align="center start" layout-wrap>
-                <md-card ng-repeat="card in vm.cards" flex="100" flex-gt-xs="45" >
+                <md-card ng-repeat="card in vm.cards" flex="100" flex-gt-xs="45">
                     <img ng-src="{{card.img}}" class="md-card-image" alt="Washed Out">
                     <md-card-title>
                         <md-card-title-text>
@@ -41,10 +39,10 @@
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
                         <md-button class="md-icon-button" aria-label="Favorite">
-                            <ng-md-icon icon="favorite"></ng-md-icon>
+                            <ng-md-icon icon="favorite" style="fill: rgba(0,0,0,0.68)"></ng-md-icon>
                         </md-button>
                         <md-button class="md-icon-button" aria-label="Share">
-                            <ng-md-icon icon="share"></ng-md-icon>
+                            <ng-md-icon icon="share" style="fill: rgba(0,0,0,0.68)"></ng-md-icon>
                         </md-button>
                     </md-card-actions>
                 </md-card>
