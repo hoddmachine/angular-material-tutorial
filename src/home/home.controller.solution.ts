@@ -3,7 +3,8 @@
 import { IScope } from 'angular';
 
 const deps: string[] = [
-    '$scope'
+    '$scope',
+    '$mdSidenav'
 ];
 
 export class HomeCtrl {
@@ -11,7 +12,8 @@ export class HomeCtrl {
     cards: [{}];
 
     constructor(
-        private $scope: IScope
+        private $scope: IScope,
+        private $mdSidenav: any
     ) {
         this.menu = [
             {
@@ -63,6 +65,10 @@ export class HomeCtrl {
             }
         ];
     }
+
+    toggleSidenav(menuId: string) {
+        this.$mdSidenav(menuId).toggle();
+    };
 }
 
 HomeCtrl.$inject = deps;
