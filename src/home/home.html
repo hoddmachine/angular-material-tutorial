@@ -1,1 +1,54 @@
-<p>Hello from Home module</p>
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="vm.toggleSidenav('left')" hide-gt-sm class="md-icon-button" aria-label="Show menu">
+            <ng-md-icon icon="menu" style="fill: white;"></ng-md-icon>
+        </md-button>
+        <h1>Foodbook</h1>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Facebook">
+            <ng-md-icon icon="facebook-box" style="fill: white;"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<div layout="row" layout-align="start stretch">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <md-list>
+            <md-item ng-repeat="item in vm.menu">
+                <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">{{item.title}}
+                        </div>
+                    </md-item-content>
+                </a>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+    <div flex id="content">
+        <md-content class="md-padding">
+            <div layout="row" class="card-container" layout-align="center start" layout-wrap>
+                <md-card ng-repeat="card in vm.cards" flex="100" flex-gt-xs="45" >
+                    <img ng-src="{{card.img}}" class="md-card-image" alt="Washed Out">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{card.title}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <p>{{card.caption}}</p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <ng-md-icon icon="favorite"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="Share">
+                            <ng-md-icon icon="share"></ng-md-icon>
+                        </md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </md-content>
+    </div>
+</div>
