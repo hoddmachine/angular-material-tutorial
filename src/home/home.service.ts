@@ -1,17 +1,13 @@
 'use strict';
 
-import { IScope } from 'angular';
-
 const deps: string[] = [
-    '$scope',
 ];
 
-export class HomeCtrl {
+export class HomeService {
     menu: [{}];
     cards: [{}];
 
     constructor(
-        private $scope: IScope
     ) {
         this.menu = [
             {
@@ -63,6 +59,14 @@ export class HomeCtrl {
             }
         ];
     }
+
+    getCards() {
+        return this.cards;
+    }
+
+    getMenu() {
+        return this.menu;
+    }
 }
 
-HomeCtrl.$inject = deps;
+HomeService.$inject = deps;
